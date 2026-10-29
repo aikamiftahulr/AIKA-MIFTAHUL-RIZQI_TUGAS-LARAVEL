@@ -15,7 +15,8 @@ class PaketController extends Controller
 
     public function create()
     {
-        return view('tambah');
+       //return view tambah
+       return view('tambah');
     }
 
     public function store(Request $request)
@@ -56,6 +57,7 @@ class PaketController extends Controller
     public function destroy($id)
     {
         $paket = Paket::findOrFail($id);
+        //$paket delete()
         $paket->delete();
 
         return redirect()->route('rental.index')->with('success', 'Paket berhasil dihapus!');
